@@ -1,5 +1,7 @@
 FROM php:7.0-apache
 
+ENV TERM xterm-256color
+
 # Install base packages
 RUN apt-get update -qq && apt-get install -y \
     locales -qq \

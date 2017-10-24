@@ -1,6 +1,11 @@
 FROM php:7.0-apache
 
-ENV TERM xterm-256color
+ENV TERM "xterm-256color"
+ENV DEBIAN_FRONTEND "noninteractive"
+ENV COMPOSER_HOME "/root/composer"
+ENV LANG "C.UTF-8"
+ENV LANGUAGE "C.UTF-8"
+ENV LC_ALL "C.UTF-8"
 
 # Install base packages
 RUN apt-get update -qq && apt-get install -y \

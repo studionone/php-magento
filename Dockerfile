@@ -29,6 +29,7 @@ RUN apt-get update -qq && apt-get install -y \
         libsasl2-dev \
         libxslt-dev \
         curl \
+        sudo \
         git \
         libfreetype6-dev \
         libicu-dev \

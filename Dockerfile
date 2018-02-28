@@ -50,7 +50,11 @@ RUN docker-php-ext-install bz2 soap calendar iconv intl xsl mbstring mcrypt mysq
     && pecl install memcached redis \
     && docker-php-ext-enable memcached.so redis.so \
     && a2enmod rewrite \
-    && echo "memory_limit=2048M" > /usr/local/etc/php/conf.d/memory-limit.ini \
+    && echo "memory_limit=1024M" > /usr/local/etc/php/conf.d/memory-limit.ini \
+    && echo "max_execution_time=18000" > /usr/local/etc/php/conf.d/max-execution-time.ini \
+    && echo "max_input_time=6000" > /usr/local/etc/php/conf.d/max-input-time.ini \
+    && echo "post_max_size=128M" > /usr/local/etc/php/conf.d/post-max-size.ini \
+    && echo "upload_max_filesize=32M" > /usr/local/etc/php/conf.d/upload-max-filesize.ini \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && export PATH=$COMPOSER_HOME/vendor/bin:$PATH \
     && cd /tmp \

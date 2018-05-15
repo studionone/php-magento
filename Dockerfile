@@ -17,32 +17,32 @@ RUN apt-get update -qq && apt-get install -y \
     && dpkg-reconfigure locales \
     && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4F4EA0AAE5267A6C \
     && apt-get update && apt-get upgrade -y && apt-get install -y \
-        software-properties-common \
         apt-transport-https \
+        build-essential \
         ca-certificates \
         cron \
-        python-software-properties \
-        build-essential \
-        xz-utils \
-        libbz2-dev \
-        libmemcached-dev \
-        libmysqlclient-dev \
-        libsasl2-dev \
-        libxslt-dev \
         curl \
-        sudo \
         git \
+        libbz2-dev \
         libfreetype6-dev \
         libicu-dev \
         libjpeg-dev \
         libmcrypt-dev \
+        libmemcached-dev \
         libmemcachedutil2 \
+        libmysqlclient-dev \
         libpng12-dev \
         libpq-dev \
-        wget \
+        libsasl2-dev \
+        libxslt-dev \
+        nano \
+        python-software-properties \
+        software-properties-common \
+        sudo \
         unzip \
-        zip \
-        nano
+        wget \
+        xz-utils \
+        zip
 
 # Install Project dependencies (PHP/Composer/Node/Grunt), then clean temporary files
 RUN docker-php-ext-install bz2 soap calendar iconv intl xsl mbstring mcrypt mysqli opcache pdo_mysql pdo_pgsql pgsql zip \

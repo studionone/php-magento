@@ -20,6 +20,7 @@ RUN apt-get update -qq && apt-get install -y \
         software-properties-common \
         apt-transport-https \
         ca-certificates \
+        cron \
         python-software-properties \
         build-essential \
         xz-utils \

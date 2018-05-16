@@ -59,6 +59,7 @@ RUN docker-php-ext-install bz2 soap calendar iconv intl xsl mbstring mcrypt mysq
     && echo "upload_max_filesize=32M" > /usr/local/etc/php/conf.d/upload-max-filesize.ini \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && export PATH=$COMPOSER_HOME/vendor/bin:$PATH \
+    && composer self-update && composer global require hirak/prestissimo \
     && cd /tmp \
     && curl -sL https://deb.nodesource.com/setup_6.x | bash - \
     && apt-get update && apt-get install -y nodejs \

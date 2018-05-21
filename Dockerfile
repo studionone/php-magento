@@ -36,6 +36,7 @@ RUN apt-get update -qq && apt-get install -y \
         libsasl2-dev \
         libxslt-dev \
         nano \
+        php7.0-bcmath \
         python-software-properties \
         software-properties-common \
         sudo \

@@ -36,7 +36,6 @@ RUN apt-get update -qq && apt-get install -y \
         libsasl2-dev \
         libxslt-dev \
         nano \
-        php7.0-bcmath \
         python-software-properties \
         software-properties-common \
         sudo \
@@ -48,7 +47,7 @@ RUN apt-get update -qq && apt-get install -y \
 # Install Project dependencies (PHP/Composer/Node/Grunt), then clean temporary files
 RUN docker-php-ext-install bz2 soap calendar iconv intl xsl mbstring mcrypt mysqli opcache pdo_mysql pdo_pgsql pgsql zip \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-    && docker-php-ext-install gd \
+    && docker-php-ext-install gd bcmath \
     && pecl install memcached redis \
     && docker-php-ext-enable memcached.so redis.so \
     && a2enmod rewrite \

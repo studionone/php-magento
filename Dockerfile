@@ -1,6 +1,7 @@
 FROM php:7.0-apache
 
 ENV TERM "xterm-256color"
+ENV COLUMNS 200
 ENV DEBIAN_FRONTEND "noninteractive"
 ENV COMPOSER_HOME "/root/composer"
 ENV LANG "C.UTF-8"

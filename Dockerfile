@@ -24,6 +24,7 @@ RUN apt-get update -qq && apt-get install -y \
         cron \
         curl \
         git \
+        gnupg \
         libbz2-dev \
         libfreetype6-dev \
         libicu-dev \
@@ -35,6 +36,7 @@ RUN apt-get update -qq && apt-get install -y \
         libpng12-dev \
         libpq-dev \
         libsasl2-dev \
+        libssl-dev \
         libxslt-dev \
         nano \
         python-software-properties \

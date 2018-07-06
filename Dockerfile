@@ -33,13 +33,11 @@ RUN apt-get update -qq && apt-get install -y \
        libmcrypt-dev \
        libmemcached-dev \
        libmemcachedutil2 \
-       libmysqlclient-dev \
-       libpng12-dev \
+       libpng-dev \
        libpq-dev \
        libsasl2-dev \
        libxslt-dev \
        nano \
-       python-software-properties \
        software-properties-common \
        sudo \
        unzip \

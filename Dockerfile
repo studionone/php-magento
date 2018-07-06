@@ -10,7 +10,9 @@ ENV LC_ALL "C.UTF-8"
 
 # Install base packages
 RUN apt-get update -qq && apt-get install -y \
-       locales -qq \
+       gnupg \
+       libssl-dev \
+    && apt-get install -y locales -qq \
     && locale-gen en_AU \
     && locale-gen en_AU.UTF-8 \
     && dpkg-reconfigure locales \
@@ -18,9 +20,6 @@ RUN apt-get update -qq && apt-get install -y \
     && dpkg-reconfigure locales \
     && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4F4EA0AAE5267A6C \
     && apt-get update && apt-get upgrade -y && apt-get install -y \
-       libssl-dev \
-       gnupg \
-    && apt-get install -y \
        apt-transport-https \
        build-essential \
        ca-certificates \

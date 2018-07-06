@@ -56,8 +56,8 @@ RUN docker-php-ext-install bz2 soap calendar iconv intl xsl mbstring mcrypt mysq
     && echo "max_execution_time=18000" > /usr/local/etc/php/conf.d/max-execution-time.ini \
     && echo "max_input_time=6000" > /usr/local/etc/php/conf.d/max-input-time.ini \
     && echo "max_input_vars=5000" > /usr/local/etc/php/conf.d/max-input-vars.ini \
-    && echo "post_max_size=128M" > /usr/local/etc/php/conf.d/post-max-size.ini \
-    && echo "upload_max_filesize=48M" > /usr/local/etc/php/conf.d/upload-max-filesize.ini \
+    && echo "post_max_size=256M" > /usr/local/etc/php/conf.d/post-max-size.ini \
+    && echo "upload_max_filesize=256M" > /usr/local/etc/php/conf.d/upload-max-filesize.ini \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && export PATH=$COMPOSER_HOME/vendor/bin:$PATH \
     && composer self-update && composer global require hirak/prestissimo \
